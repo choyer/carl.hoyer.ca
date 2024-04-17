@@ -18,4 +18,3 @@ jobs:
           tool: zola@0.18.0
         env:
           CLICOLOR_FORCE=1
-        run: zola build
