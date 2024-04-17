@@ -7,17 +7,15 @@ jobs:
   build:
     runs-on: debian-latest
     steps:
-      # Checkout repo for GitHub Actions runner use
       - name: Checkout main
         uses: actions/checkout@v4
         with:
           submodules: true
 
-      -name: Fetch & Install Zola
-      uses: taiki-e/install-action@v2
+      - name: Fetch & Install Zola
+        uses: taiki-e/install-action@v2
         with:
           tool: zola@0.18.0
 
-      # Build Zola static site
       - name: Zola Build 
         run: zola build
