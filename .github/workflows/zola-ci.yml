@@ -2,19 +2,25 @@ name: Zola CI
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
-    tags:
-      - "*"
   
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      # Checkout repo for GitHub Actions runner use
       - name: Checkout main
         uses: actions/checkout@v4
-      - name: Build only 
+        with:
+          submodules: true
+
+      # Update references
+      - name: Git Submodule Update
+        run: |
+          git pull --recurse-submodules
+          git submodule update --remote --recursive
+
+      # Build Zola static site
+      - name: Zola Build 
         uses: shalzz/zola-deploy-action@v0.18.0
         env:
           BUILD_ONLY: true
