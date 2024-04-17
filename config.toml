@@ -1,0 +1,124 @@
+# The URL the site will be built for
+base_url = "https://carl.hoyer.ca"
+
+# The site title and description; used in feeds by default.
+title = "Carl Hoyer"
+description = "Carl Hoyer :: A human centric technologists personal website ::"
+
+# The default author for pages
+author = "Carl Hoyer"
+
+# The default language; used in feeds.
+default_language = "en"
+
+# For overriding the default output directory `public`, set it to another value (e.g.: "docs")
+output_dir = "public"
+
+# Theme [my personal fork of the Hyde theme :: https://github.com/choyer/hyde]
+theme = "hyde"
+
+# Whether to automatically compile all Sass files in the sass directory
+compile_sass = true
+
+# Whether to build a search index to be used later on by a JavaScript library
+build_search_index = false
+
+# When set to "true", a feed is automatically generated.
+generate_feed = true
+
+# The filename to use for the feed. Used as the template filename, too.
+# Defaults to "atom.xml", which has a built-in template that renders an Atom 1.0 feed.
+# There is also a built-in template "rss.xml" that renders an RSS 2.0 feed.
+feed_filename = "atom.xml"
+
+# The taxonomies to be rendered for the site and their configuration of the default languages
+# Example:
+#     taxonomies = [
+#       {name = "tags", feed = true}, # each tag will have its own feed
+#       {name = "tags"}, # you can have taxonomies with the same name in multiple languages
+#       {name = "categories", paginate_by = 5},  # 5 items per page for a term
+#       {name = "authors"}, # Basic definition: no feed or pagination
+#     ]
+#
+taxonomies = [
+    {name = "tags", feed = true},
+]
+
+[markdown]
+# Whether smart punctuation is enabled (changing quotes, dashes, dots in their typographic form)
+# For example, `...` into `…`, `"quote"` into `“curly”` etc
+smart_punctuation = true
+
+# Whether to do syntax highlighting
+# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
+highlight_code = true
+
+# Output css files for the following themes to static folder
+highlight_themes_css = [
+  { theme = "gruvbox-dark", filename = "syntax-gruvbox-dark.css" },
+  { theme = "gruvbox-light", filename = "syntax-gruvbox-light.css" },
+]
+
+# The theme to use for code highlighting.
+# Theme name / "css"
+highlight_theme = "css"
+
+# When set to "true", emoji aliases translated to their corresponding
+# Unicode emoji equivalent in the rendered Markdown files. (e.g.: :smile: => 😄)
+render_emoji = true
+
+# Whether external links are to be opened in a new tab
+# If this is true, a `rel="noopener"` will always automatically be added for security reasons
+external_links_target_blank = false
+
+# Various slugification strategies, see below for details
+# Defaults to everything being a slug
+[slugify]
+paths = "on"
+taxonomies = "on"
+anchors = "on"
+# Whether to remove date prefixes for page path slugs.
+# For example, content/posts/2016-10-08_a-post-with-dates.md => posts/a-post-with-dates
+# When true, content/posts/2016-10-08_a-post-with-dates.md => posts/2016-10-08-a-post-with-dates
+paths_keep_dates = false
+
+[link_checker]
+internal_level = "warn"
+
+[extra]
+# Custom variables here
+hyde_theme = "theme-base-08"
+hyde_reverse = true
+
+# Custom :: Sidebar Subtitle (ideally keep it short and simple)
+hyde_sidebar_subtitle = "48 34 63 6b 65 72"
+
+# Custom :: Sidebar Subtext (a bit longer the subtitle)
+hyde_sidebar_subtext = "Technologist. Love everything from the whirl & blinkenlights of baremetal; to the command line; to bending computers to my will through programming; to great UX!"
+
+# Sidebar main menu links
+hyde_links = [
+    {url = "/", name = "Writing"},
+    {url = "/projects/", name = "Projects"},
+    {url = "/colophon/", name = "Colophon"},
+    {url = "/about/", name = "About"},
+]
+
+# Custom :: Social media profile links
+hyde_social_links = [
+    {name = "github", url = "https://github.com/choyer"},
+    {name = "gitlab", url = "https://gitlab.com/choyer"},
+    {name = "mastodon", url = "https://hachyderm.io/@crh"},
+    {name = "stackoverflow", url = "https://stackoverflow.com/users/23972886/carl-hoyer"},
+    {name = "keybase", url = "https://keybase.io/choyer"},
+    {name = "liberapay", url = "https://liberapay.com/crh"},
+    {name = "rss", url = "https://carl.hoyer.ca/atom.xml"},
+]
+
+# Custom :: Include copyright
+hyde_copyright = true
+hyde_copyright_license_text = "Licensed under CC BY-SA 4.0"
+hyde_copyright_license_link = "https://creativecommons.org/licenses/by-sa/4.0/"
+
+# Identity :: GPG
+ident_gpg_fingerprint = "392B 7680 8DC7 E561 CA6C 3D58 5BF2 80D7 0776 4821"
