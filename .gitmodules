@@ -1,3 +1,3 @@
-[submodule "themes/hyde"]
+[submodule "hyde"]
 	path = themes/hyde
-	url = https://github.com/choyer/hyde.git
+	url = https://github.com/choyer/hyde
