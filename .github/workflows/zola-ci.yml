@@ -7,13 +7,18 @@ on:
       - main
     tags:
       - "*"
-
+  
 jobs:
-  z-build:
-    name: Zola Build
-
+  build:
+    runs-on: ubuntu-latest
+    if: github.ref != 'refs/heads/main'
     steps:
-      - uses: taiki-e/install-action@v2
-        with:
-          tool: zola@0.18.0
-          
+      - name: Checkout main
+        uses: actions/checkout@v4
+      - name: Build only 
+        uses: shalzz/zola-deploy-action@v0.18.0
+        env:
+          BUILD_DIR: public
+          BUILD_ONLY: true
+          BUILD_FLAGS: --drafts
+          BUILD_THEMES: true
