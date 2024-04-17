@@ -16,6 +16,7 @@ jobs:
       - name: Fetch & Install Zola Theme
         run: |
           git submodule update --recursive --remote
+          ls -al
 
       - name: Fetch & Install Zola
         uses: taiki-e/install-action@v2
