@@ -5,7 +5,7 @@ on:
   
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: debian-latest
     steps:
       # Checkout repo for GitHub Actions runner use
       - name: Checkout main
@@ -13,16 +13,11 @@ jobs:
         with:
           submodules: true
 
-      # Update references
-      - name: Git Submodule Update
-        run: |
-          git pull --recurse-submodules
-          git submodule update --remote --recursive
+      -name: Fetch & Install Zola
+      uses: taiki-e/install-action@v2
+        with:
+          tool: zola@0.18.0
 
       # Build Zola static site
       - name: Zola Build 
-        uses: shalzz/zola-deploy-action@v0.18.0
-        env:
-          BUILD_ONLY: true
-          BUILD_FLAGS: --drafts
-          BUILD_THEMES: true
+        run: zola build
