@@ -1,13 +1,14 @@
-name: Zola CI
+name: Build Site
 
 on:
   workflow_dispatch:
   
 jobs:
-  build:
+  build_and_check:
+    name: Zola Build & Check Links
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout main
+      - name: Checkout Site Source
         uses: actions/checkout@v4
         with:
           submodules: true
@@ -18,4 +19,6 @@ jobs:
           tool: zola@0.18.0
 
       - name: Zola Build 
-        run: zola build
+        run: |
+          cd $GITHUB_WORKSPACE
+          zola build
