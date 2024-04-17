@@ -20,5 +20,6 @@ jobs:
 
       - name: Zola Build 
         run: |
-          cd $GITHUB_WORKSPACE
+          pwd
+          ls
           zola build
