@@ -21,3 +21,10 @@ jobs:
       - name: Zola Build 
         run: |
           zola build
+
+      - name: Save Site Build
+        uses: actions/upload-artifact@v4
+        with:
+          name: carl-hoyer-ca-site
+          path: |
+            public
