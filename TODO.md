@@ -18,13 +18,15 @@
 
 ## Solar Server Hosting Transition
 
+See also [https://github.com/choyer/lumina](https://github.com/choyer/lumina)
+
 - [x] Purchase Olimex A20-OLinuXino-LIME2-e16Gs16M :money_with_wings:
-- [ ] Determine required battery and solar charge controller `r&d`
+- [x] Determine required battery and solar charge controller `r&d`
 - [ ] Purchase solar panel(s) :money_with_wings:
-- [ ] Purchase battery :money_with_wings:
-- [ ] Purchase solar charge controller :money_with_wings:
+- [x] Purchase battery :money_with_wings:
+- [x] Purchase solar charge controller :money_with_wings:
 - [ ] Experiment & Benchmark low-power Linux kernel / OS optimizations Olimex A20-OLinuXino-LIME2-e16Gs16M :thought_balloon: `r&d`
-- [ ] Determine ideal solar panel placement `r&d`
+- [x] Determine ideal solar panel placement `r&d`
 - [ ] Configure Let's Encrypt
 - [ ] Dither image workflow for improved site loading / server performance `optimization`
 - [ ] Provide servers local weather (current | forcast) from OpenWeather `enhancement`
