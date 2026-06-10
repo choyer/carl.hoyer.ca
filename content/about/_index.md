@@ -1,7 +1,5 @@
 +++
 title = "About"
-date = 2024-03-28
-update = "2024-04-16"
 +++
 
 <p class="lead">Welcome. My name is <strong>Carl Hoyer</strong>. I grew-up and currently live in the vast frontier of the Great White North, also known as Canada Eh!, nestled in the hills bordering suburban wilderness.</p>

@@ -24,12 +24,12 @@ compile_sass = true
 build_search_index = false
 
 # When set to "true", a feed is automatically generated.
-generate_feed = true
+generate_feeds = true
 
 # The filename to use for the feed. Used as the template filename, too.
 # Defaults to "atom.xml", which has a built-in template that renders an Atom 1.0 feed.
 # There is also a built-in template "rss.xml" that renders an RSS 2.0 feed.
-feed_filename = "atom.xml"
+feed_filenames = ["atom.xml"]
 
 # The taxonomies to be rendered for the site and their configuration of the default languages
 # Example:
@@ -50,18 +50,28 @@ taxonomies = [
 smart_punctuation = true
 
 # Whether to do syntax highlighting
-# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
-highlight_code = true
+[markdown.highlighting]
+# When set to "true", missing highlight languages are treated as errors. Defaults to false but recommended to set to true.
+error_on_missing_language = true
 
-# Output css files for the following themes to static folder
-highlight_themes_css = [
-  { theme = "gruvbox-dark", filename = "syntax-gruvbox-dark.css" },
-  { theme = "gruvbox-light", filename = "syntax-gruvbox-light.css" },
-]
+# Whether to use inline hex colours (`inline`) or CSS classes (`class`) 
+style = "class"
 
-# The theme to use for code highlighting.
-# Theme name / "css"
-highlight_theme = "css"
+# Selecting a theme is always required: you have a choice between single (1) or dual themes (2).
+# Only outputting CSS classes like before 0.22 is not possible anymore.
+# 1. If you use a single theme, put its name here. See the syntax highlighting page for the possible choices.
+#theme = ""
+
+# 2. If you want light/dark themes, use the 2 fields below instead. See the syntax highlighting page for the possible choices.
+light_theme = "gruvbox-light-soft"
+dark_theme = "gruvbox-dark-hard"
+
+# A list of files for additional JSON TextMate grammars
+#extra_grammars = []
+
+# A list of files for additional JSON TextMate themes
+# Get themes from https://textmate-grammars-themes.netlify.app/
+#extra_themes = []
 
 # When set to "true", emoji aliases translated to their corresponding
 # Unicode emoji equivalent in the rendered Markdown files. (e.g.: :smile: => 😄)
@@ -87,6 +97,9 @@ internal_level = "warn"
 
 [extra]
 # Custom variables here
+separator = " • "
+
+# Hyde theme variables 
 hyde_theme = "theme-base-08"
 hyde_reverse = true
 
